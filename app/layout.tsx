@@ -90,9 +90,9 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: "your-google-verification-code",
-    yandex: "your-yandex-verification-code",
-    yahoo: "your-yahoo-verification-code",
+    google: "4eQrzYpjYsTXeV85JBE9SJtZHMauOCU4dYDL8_",
+    yandex: "1a7cb840c769a471",
+    yahoo: "100949D3C191960B4F8A1EB96FFD0AB3",
   },
   category: "Technology",
 };
