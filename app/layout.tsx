@@ -1,15 +1,14 @@
-import type React from "react";
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-import { Toaster } from "@/components/ui/toaster";
+import type React from "react"
+import type { Metadata } from "next"
+import { Inter } from "next/font/google"
+import "./globals.css"
+import { Toaster } from "@/components/ui/toaster"
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: {
-    default:
-      "LinkedIn Post Formatter - Free Unicode Text Styling Tool | CodeWithKetan",
+    default: "LinkedIn Post Formatter - Free Unicode Text Styling Tool | CodeWithKetan",
     template: "%s | CodeWithKetan - LinkedIn Post Formatter",
   },
   description:
@@ -90,17 +89,18 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: "4eQrzYpjYsTXeV85JBE9SJtZHMauOCU4dYDL8_",
-    yandex: "1a7cb840c769a471",
-    yahoo: "100949D3C191960B4F8A1EB96FFD0AB3",
+    google: "your-google-verification-code",
+    yandex: "your-yandex-verification-code",
+    yahoo: "your-yahoo-verification-code",
   },
   category: "Technology",
-};
+    generator: 'v0.dev'
+}
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
     <html lang="en">
@@ -112,11 +112,7 @@ export default function RootLayout({
 
         {/* Preconnect to external domains */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 
         {/* Favicon */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -220,5 +216,5 @@ export default function RootLayout({
         <Toaster />
       </body>
     </html>
-  );
+  )
 }

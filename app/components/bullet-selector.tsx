@@ -38,32 +38,34 @@ export const BulletSelector = memo(function BulletSelector({ onBulletSelect, onC
   )
 
   return (
-    <Card className="w-72 max-h-80 overflow-y-auto shadow-xl border-2 rounded-lg">
-      <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2 bg-green-50 dark:bg-green-900">
+    <Card className="w-64 sm:w-72 max-h-72 sm:max-h-80 overflow-y-auto shadow-xl border-2 rounded-lg">
+      <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2 bg-green-50 dark:bg-green-900 p-3 sm:p-4">
         <CardTitle className="text-sm font-medium">• Bullet Styles</CardTitle>
         <Button
           variant="ghost"
           size="sm"
           onClick={onClose}
-          className="h-6 w-6 p-0 hover:bg-green-100 dark:hover:bg-green-800"
+          className="h-6 w-6 p-0 hover:bg-green-100 dark:hover:bg-green-800 touch-manipulation"
         >
           <X className="h-4 w-4" />
         </Button>
       </CardHeader>
-      <CardContent>
+      <CardContent className="p-2 sm:p-3">
         <div className="grid grid-cols-1 gap-1">
           {bulletStyles.map((bullet) => (
             <Button
               key={bullet.symbol}
               variant="ghost"
               onClick={() => onBulletSelect(bullet.symbol)}
-              className="justify-start h-auto p-3 text-left hover:bg-green-100 dark:hover:bg-green-800 rounded-md transition-colors border-b border-gray-100 dark:border-gray-700 last:border-b-0"
+              className="justify-start h-auto p-2 sm:p-3 text-left hover:bg-green-100 dark:hover:bg-green-800 rounded-md transition-colors border-b border-gray-100 dark:border-gray-700 last:border-b-0 touch-manipulation"
               title={bullet.description}
             >
-              <span className="text-lg mr-3 w-6 text-center font-bold">{bullet.symbol}</span>
+              <span className="text-base sm:text-lg mr-2 sm:mr-3 w-5 sm:w-6 text-center font-bold">
+                {bullet.symbol}
+              </span>
               <div className="flex flex-col">
-                <span className="text-sm font-medium">{bullet.name}</span>
-                <span className="text-xs text-gray-500 dark:text-gray-400">{bullet.description}</span>
+                <span className="text-xs sm:text-sm font-medium">{bullet.name}</span>
+                <span className="text-xs text-gray-500 dark:text-gray-400 hidden sm:block">{bullet.description}</span>
               </div>
             </Button>
           ))}
