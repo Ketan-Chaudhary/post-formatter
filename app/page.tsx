@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Switch } from "@/components/ui/switch"
+import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Switch } from "@/components/ui/switch";
 import {
   ArrowRight,
   Sparkles,
@@ -21,24 +21,24 @@ import {
   Search,
   Users,
   TrendingUp,
-} from "lucide-react"
-import Link from "next/link"
+} from "lucide-react";
+import Link from "next/link";
 
 export default function LandingPage() {
-  const [darkMode, setDarkMode] = useState(false)
+  const [darkMode, setDarkMode] = useState(false);
 
   // Load dark mode preference
   useEffect(() => {
-    const savedDarkMode = localStorage.getItem("linkedin-post-dark-mode")
+    const savedDarkMode = localStorage.getItem("linkedin-post-dark-mode");
     if (savedDarkMode) {
-      setDarkMode(savedDarkMode === "true")
+      setDarkMode(savedDarkMode === "true");
     }
-  }, [])
+  }, []);
 
   // Save dark mode preference
   useEffect(() => {
-    localStorage.setItem("linkedin-post-dark-mode", darkMode.toString())
-  }, [darkMode])
+    localStorage.setItem("linkedin-post-dark-mode", darkMode.toString());
+  }, [darkMode]);
 
   const features = [
     {
@@ -69,7 +69,7 @@ export default function LandingPage() {
         "All formatting happens locally in your browser. Your content never leaves your device for maximum security.",
       keywords: "privacy, secure formatting, local processing",
     },
-  ]
+  ];
 
   const socialLinks = [
     {
@@ -96,7 +96,7 @@ export default function LandingPage() {
       url: "https://www.ketanchaudhary.ninja/",
       color: "hover:text-green-500",
     },
-  ]
+  ];
 
   const stats = [
     {
@@ -117,12 +117,14 @@ export default function LandingPage() {
       label: "Free Forever",
       description: "No hidden costs or premium features",
     },
-  ]
+  ];
 
   return (
     <div
       className={`min-h-screen transition-colors duration-300  ${
-        darkMode ? "dark bg-gray-900" : "bg-gradient-to-br from-blue-50 via-white to-purple-50"
+        darkMode
+          ? "dark bg-gray-900"
+          : "bg-gradient-to-br from-blue-50 via-white to-purple-50"
       }`}
     >
       {/* SEO-optimized structured content */}
@@ -153,7 +155,9 @@ export default function LandingPage() {
             <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
               <Type className="w-5 h-5 text-white" />
             </div>
-            <span className="text-xl font-bold text-gray-900 dark:text-white">CodeWithKetan</span>
+            <span className="text-xl font-bold text-gray-900 dark:text-white">
+              PostFormatter
+            </span>
           </div>
 
           <div className="flex items-center space-x-4">
@@ -201,7 +205,8 @@ export default function LandingPage() {
 
           <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
             Transform your LinkedIn posts with beautiful Unicode styling. Add
-            <strong> bold</strong>, <em>italic</em>, and combined formatting that works perfectly across all platforms.{" "}
+            <strong> bold</strong>, <em>italic</em>, and combined formatting
+            that works perfectly across all platforms.{" "}
             <strong>100% free</strong> and <strong>privacy-focused</strong>.
           </p>
 
@@ -212,9 +217,15 @@ export default function LandingPage() {
                 <div className="flex justify-center mb-2">
                   <stat.icon className="w-8 h-8 text-blue-600" />
                 </div>
-                <div className="text-3xl font-bold text-gray-900 dark:text-white mb-1">{stat.number}</div>
-                <div className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1">{stat.label}</div>
-                <div className="text-xs text-gray-500 dark:text-gray-400">{stat.description}</div>
+                <div className="text-3xl font-bold text-gray-900 dark:text-white mb-1">
+                  {stat.number}
+                </div>
+                <div className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1">
+                  {stat.label}
+                </div>
+                <div className="text-xs text-gray-500 dark:text-gray-400">
+                  {stat.description}
+                </div>
               </div>
             ))}
           </div>
@@ -248,8 +259,12 @@ export default function LandingPage() {
                   You
                 </div>
                 <div>
-                  <div className="font-semibold text-gray-900 dark:text-white">Your Name</div>
-                  <div className="text-sm text-gray-500 dark:text-gray-400">Your Title • Now</div>
+                  <div className="font-semibold text-gray-900 dark:text-white">
+                    Ketan Chaudhary
+                  </div>
+                  <div className="text-sm text-gray-500 dark:text-gray-400">
+                    PostFormatter Launched • Now
+                  </div>
                 </div>
               </div>
 
@@ -261,7 +276,9 @@ export default function LandingPage() {
                 <p className="mb-1">• 𝑰𝒏𝒔𝒕𝒂𝒏𝒕 𝒇𝒐𝒓𝒎𝒂𝒕𝒕𝒊𝒏𝒈</p>
                 <p className="mb-1">• 𝑹𝒆𝒂𝒍-𝒕𝒊𝒎𝒆 𝒑𝒓𝒆𝒗𝒊𝒆𝒘</p>
                 <p className="mb-4">• 𝑷𝒓𝒊𝒗𝒂𝒄𝒚 𝒇𝒊𝒓𝒔𝒕</p>
-                <p className="text-blue-600 dark:text-blue-400">#LinkedIn #Productivity #Tools #CodeWithKetan</p>
+                <p className="text-blue-600 dark:text-blue-400">
+                  #LinkedIn #Productivity #Tools #PostFormatter
+                </p>
               </div>
             </div>
           </div>
@@ -275,7 +292,8 @@ export default function LandingPage() {
             Powerful Features for LinkedIn Success
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Everything you need to create engaging LinkedIn posts that capture attention and drive engagement
+            Everything you need to create engaging LinkedIn posts that capture
+            attention and drive engagement
           </p>
         </div>
 
@@ -289,10 +307,14 @@ export default function LandingPage() {
                 <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
                   <feature.icon className="w-8 h-8 text-white" />
                 </div>
-                <CardTitle className="text-xl font-semibold text-gray-900 dark:text-white">{feature.title}</CardTitle>
+                <CardTitle className="text-xl font-semibold text-gray-900 dark:text-white">
+                  {feature.title}
+                </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-600 dark:text-gray-300 text-center leading-relaxed">{feature.description}</p>
+                <p className="text-gray-600 dark:text-gray-300 text-center leading-relaxed">
+                  {feature.description}
+                </p>
               </CardContent>
             </Card>
           ))}
@@ -302,7 +324,9 @@ export default function LandingPage() {
       {/* How It Works */}
       <section className="container mx-auto px-4 py-16" id="how-it-works">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">How It Works</h2>
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            How It Works
+          </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300">
             Simple, fast, and effective LinkedIn post formatting
           </p>
@@ -313,25 +337,32 @@ export default function LandingPage() {
             {
               step: "1",
               title: "Write Your Post",
-              description: "Type or paste your LinkedIn post content into our intuitive editor",
+              description:
+                "Type or paste your LinkedIn post content into our intuitive editor",
             },
             {
               step: "2",
               title: "Apply Styling",
-              description: "Select text and choose from bold, italic, or combined Unicode formatting",
+              description:
+                "Select text and choose from bold, italic, or combined Unicode formatting",
             },
             {
               step: "3",
               title: "Copy & Share",
-              description: "Copy your formatted post and paste it directly to LinkedIn for maximum impact",
+              description:
+                "Copy your formatted post and paste it directly to LinkedIn for maximum impact",
             },
           ].map((step, index) => (
             <div key={index} className="text-center">
               <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold">
                 {step.step}
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">{step.title}</h3>
-              <p className="text-gray-600 dark:text-gray-300">{step.description}</p>
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+                {step.title}
+              </h3>
+              <p className="text-gray-600 dark:text-gray-300">
+                {step.description}
+              </p>
             </div>
           ))}
         </div>
@@ -346,9 +377,11 @@ export default function LandingPage() {
 
           <div className="prose prose-lg dark:prose-invert max-w-none">
             <p className="text-gray-600 dark:text-gray-300 mb-6">
-              Our <strong>LinkedIn Post Formatter</strong> is the ultimate tool for professionals looking to enhance
-              their social media presence. With support for <strong>Unicode text styling</strong>, you can create posts
-              that stand out in the LinkedIn feed and drive higher engagement rates.
+              Our <strong>LinkedIn Post Formatter</strong> is the ultimate tool
+              for professionals looking to enhance their social media presence.
+              With support for <strong>Unicode text styling</strong>, you can
+              create posts that stand out in the LinkedIn feed and drive higher
+              engagement rates.
             </p>
 
             <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
@@ -357,26 +390,33 @@ export default function LandingPage() {
 
             <ul className="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-2 mb-6">
               <li>
-                <strong>Increased Visibility:</strong> Styled text catches the eye and increases post engagement
+                <strong>Increased Visibility:</strong> Styled text catches the
+                eye and increases post engagement
               </li>
               <li>
-                <strong>Professional Branding:</strong> Consistent formatting builds your personal brand
+                <strong>Professional Branding:</strong> Consistent formatting
+                builds your personal brand
               </li>
               <li>
-                <strong>Better Readability:</strong> Bold and italic text improves content structure
+                <strong>Better Readability:</strong> Bold and italic text
+                improves content structure
               </li>
               <li>
-                <strong>Cross-Platform Compatibility:</strong> Unicode formatting works everywhere
+                <strong>Cross-Platform Compatibility:</strong> Unicode
+                formatting works everywhere
               </li>
               <li>
-                <strong>Time-Saving:</strong> Format posts quickly with our intuitive interface
+                <strong>Time-Saving:</strong> Format posts quickly with our
+                intuitive interface
               </li>
             </ul>
 
             <p className="text-gray-600 dark:text-gray-300">
-              Whether you're a <strong>content creator</strong>, <strong>marketing professional</strong>, or{" "}
-              <strong>business owner</strong>, our tool helps you create compelling LinkedIn posts that drive results.
-              Start formatting your posts today and see the difference!
+              Whether you're a <strong>content creator</strong>,{" "}
+              <strong>marketing professional</strong>, or{" "}
+              <strong>business owner</strong>, our tool helps you create
+              compelling LinkedIn posts that drive results. Start formatting
+              your posts today and see the difference!
             </p>
           </div>
         </div>
@@ -385,9 +425,12 @@ export default function LandingPage() {
       {/* CTA Section */}
       <section className="container mx-auto px-4 py-16">
         <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl p-12 text-center text-white">
-          <h2 className="text-4xl font-bold mb-4">Ready to Transform Your LinkedIn Posts?</h2>
+          <h2 className="text-4xl font-bold mb-4">
+            Ready to Transform Your LinkedIn Posts?
+          </h2>
           <p className="text-xl mb-8 opacity-90">
-            Join thousands of professionals creating standout LinkedIn content with our free formatter
+            Join thousands of professionals creating standout LinkedIn content
+            with our free formatter
           </p>
           <Link href="/formatter">
             <Button
@@ -409,11 +452,15 @@ export default function LandingPage() {
             <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
               <Type className="w-5 h-5 text-white" />
             </div>
-            <span className="text-lg font-semibold text-gray-900 dark:text-white">CodeWithKetan</span>
+            <span className="text-lg font-semibold text-gray-900 dark:text-white">
+              PostFormatter
+            </span>
           </div>
 
           <div className="flex items-center space-x-6">
-            <p className="text-gray-600 dark:text-gray-400">Made with ❤️ by Ketan Chaudhary for LinkedIn creators</p>
+            <p className="text-gray-600 dark:text-gray-400">
+              Made with ❤️ by Ketan Chaudhary for LinkedIn creators
+            </p>
             <div className="flex items-center space-x-4">
               {socialLinks.map((social) => (
                 <a
@@ -433,5 +480,5 @@ export default function LandingPage() {
         </div>
       </footer>
     </div>
-  )
+  );
 }
